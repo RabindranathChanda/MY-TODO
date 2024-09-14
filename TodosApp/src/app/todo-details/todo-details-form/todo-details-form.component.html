@@ -1,0 +1,31 @@
+<form #form="ngForm" (submit)="onSubmit(form)"
+[class.submited]="service.formSubmited" novalidate autocomplete="off">
+    <input type="hidden" name="todoId" [value]="service.formData.todoId">
+    <div class="mb-3">
+        <label>Todo Name</label>
+        <input class="form-control form-control-lg" placeholder="Name of your Todo"
+        #todoName="ngModel" name="todoName" [(ngModel)]="service.formData.todoName"required>
+    </div>
+    <div class="mb-3">
+        <label>Todo Description</label>
+        <input class="form-control form-control-lg" placeholder="Agenda of your Todo"
+        #todoName="ngModel" name="todoDesc" [(ngModel)]="service.formData.todoDesc"required>
+    </div>
+    <div class="row">
+        <div class="mb-3 col-6">
+            <label>Creation Date</label>
+            <input class="form-control form-control-lg" placeholder="DD/MM/YYYY"
+            #todoName="ngModel" name="todoCreateDate" [(ngModel)]="service.formData.todoCreateDate"required minlength="10"maxlength="10">
+        </div>
+        <div class="mb-3 col-6">
+            <label>Targate Date</label>
+            <input class="form-control form-control-lg" placeholder="DD/MM/YYYY"
+            #todoName="ngModel" name="todoTargetDate" [(ngModel)]="service.formData.todoTargetDate"required minlength="10"maxlength="10">
+        </div>
+    </div>
+    <div class="d-grid">
+        <button class="btn btn-lg btn-success" type="submit">
+            Submit
+        </button>
+    </div>
+</form>
